@@ -24,6 +24,18 @@ It is a service which emulates user connecting to the access point connected to 
    </Directory>
 ```
 
+* Or if you would like to have nice UI, then store index.html in /var/www/eduroam-test and  point Apache to it:
+
+```
+    Alias /eduroam-test/ /var/www/eduroam-test/
+    <Directory /var/www/eduroam-test/>
+	Options -Indexes -FollowSymLinks
+        Order allow,deny
+	Allow from all
+
+	DirectoryIndex index.html
+    </Directory>
+```
 * Configure RADIUS server IP and shared secret in the script
 
 ## Usage
